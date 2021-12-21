@@ -5,22 +5,14 @@ using UnityEngine;
 public class MoveStageController : MonoBehaviour
 {
     public float m_speed;
-    private Vector3 m_startPos;
-    [SerializeField] private float m_repeetPosX;
-    [SerializeField] float m_diffrentPosX;
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_startPos = transform.position;
-    }
-
-    // Update is called once per frame
+    [SerializeField] private float m_posX;
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime * m_speed);
-        if (transform.position.x < -m_repeetPosX)
+        if (transform.position.x < -m_posX)
         {
-            transform.position = m_startPos+new Vector3(m_diffrentPosX,0,transform.position.z);
+            Destroy(this.gameObject);
         }
     }
+
 }
