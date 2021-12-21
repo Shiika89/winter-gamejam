@@ -3,49 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// シーン遷移を管理するスクリプト
+/// </summary>
 public class ChangeSceneManager : MonoBehaviour
 {
+    /// <summary>フェードUI</summary>
     [SerializeField] GameObject _fadeUI;
     /// <summary>説明用UI</summary>
     [SerializeField] GameObject _explanationUI;
-
-
-    bool _explanationFlag = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /// <summary>フェード用UIを生成する</summary>
     public void SetFadeUI()
     {
         Instantiate(_fadeUI);
     }
 
+    /// <summary>
+    /// シーン遷移をする
+    /// </summary>
+    /// <param name="sceneName">シーン名</param>
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SetExplanationUI()
+    /// <summary>
+    /// 操作説明のポップアップを表示する
+    /// true = 表示中　false = 非表示
+    /// </summary>
+    public void SetExplanationUI(bool flag)
     {
-        if (!_explanationFlag)
-        {
+        if (flag)
             _explanationUI.SetActive(true);
-            _explanationFlag = true;
-        }
         else
-        {
             _explanationUI.SetActive(false);
-            _explanationFlag = false;
-        }
     }
-
 }
