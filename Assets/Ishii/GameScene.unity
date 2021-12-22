@@ -675,6 +675,16 @@ PrefabInstance:
       propertyPath: _timeText
       value: 
       objectReference: {fileID: 812608378}
+    - target: {fileID: 6409996900444704969, guid: 54124a794f406c94da2abddbdf23e7fc,
+        type: 3}
+      propertyPath: _startTimeMinute
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409996900444704969, guid: 54124a794f406c94da2abddbdf23e7fc,
+        type: 3}
+      propertyPath: _startTimeHour
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 6409996900444704970, guid: 54124a794f406c94da2abddbdf23e7fc,
         type: 3}
       propertyPath: m_LocalPosition.x
