@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject m_enemy = default;
     [SerializeField] int m_life = 3;
-    bool m_game = false;
-    bool m_clear = false;
-    bool m_gameOver = false;
 
+    public bool m_game = false;
+   
+    SetResultScript m_setResultScript = default;
     private void Awake()
     {
         Instance = this;
@@ -24,13 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        m_setResultScript = GetComponent<SetResultScript>();
     }
 
     public void Hit()
@@ -59,13 +53,14 @@ public class GameManager : MonoBehaviour
 
         if (m_life == 0)
         {
-            // ゲームオーバーの処理
+            m_setResultScript.SetUI(false);
+            m_game = false;
         }
     }
 
     public void Clear()
     {
-        // 時間まで生き残ったらclear
+        m_setResultScript.SetUI(true);
     }
 
     public void GameOver()

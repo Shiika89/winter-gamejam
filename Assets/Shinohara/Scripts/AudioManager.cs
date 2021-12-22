@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
-    [Tooltip("0 = ボタンを押した時 1= クリアSE 2 = ゲームオーバーSE 3 = ジャンプSE")]
+    [Tooltip("0.ボタンを押した時 1.クリアSE 2.ゲームオーバーSE 3.ジャンプSE")]
     /// <summary>0 = ボタンを押した時 1= クリアSE 2 = ゲームオーバーSE 3 = ジャンプSE</summary>
     [SerializeField] AudioClip[] _useSE;
 

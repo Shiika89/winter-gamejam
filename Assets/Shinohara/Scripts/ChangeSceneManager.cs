@@ -12,10 +12,14 @@ public class ChangeSceneManager : MonoBehaviour
     [SerializeField] GameObject _fadeUI;
     /// <summary>説明用UI</summary>
     [SerializeField] GameObject _explanationUI;
+    /// <summary>ゲームプレイ中のBGM</summary>
+    [SerializeField] AudioSource _bgm;
+
     /// <summary>フェード用UIを生成する</summary>
     public void SetFadeUI()
     {
         Instantiate(_fadeUI);
+        _bgm.enabled = false;
     }
 
     /// <summary>

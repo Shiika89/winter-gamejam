@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _sceneManager = GameObject.Find("SceneManager").GetComponent<ChangeSceneManager>();
+        _sceneManager =GameObject.Find("SceneManager").GetComponent<ChangeSceneManager>();
     }
 
     /// <summary>
