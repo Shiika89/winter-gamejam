@@ -44,39 +44,43 @@ public class StageSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(m_goList.Count);
-        m_oddObject.transform.Translate(Vector3.left * Time.deltaTime * m_speed);
-
-        m_timerCount += Time.deltaTime;
-        if (m_timerCount > m_interval)
+        if (GameManager.Instance.Game)
         {
-            m_speed += m_plusSpeed;
-            Debug.Log(m_timerCount);
-            m_timerCount = 0;
-        }
+            //Debug.Log(m_goList.Count);
+            m_oddObject.transform.Translate(Vector3.left * Time.deltaTime * m_speed);
 
-        if (m_oddObject.transform.position.x < -m_posX)
-        {
-            StageGenelate(m_posX);
-        }
+            m_timerCount += Time.deltaTime;
+            if (m_timerCount > m_interval)
+            {
+                m_speed += m_plusSpeed;
+                Debug.Log(m_timerCount);
+                m_timerCount = 0;
+            }
 
-      
-         m_evenObject.transform.Translate(Vector3.left * Time.deltaTime * m_speed);
-        
+            if (m_oddObject.transform.position.x < -m_posX)
+            {
+                StageGenelate(m_posX);
+            }
 
-        if (m_evenObject.transform.position.x < -m_posX)
-        {
-            StageGenelate(m_posX);
+
+            m_evenObject.transform.Translate(Vector3.left * Time.deltaTime * m_speed);
+
+
+            if (m_evenObject.transform.position.x < -m_posX)
+            {
+                StageGenelate(m_posX);
+            }
+            if (ManagerTime.CurrentHour >= m_changeDifficultyTime)
+            {
+                isHardMode = true;
+            }
         }
-        if (ManagerTime.CurrentHour >= m_changeDifficultyTime)
-        {
-            isHardMode = true;
-        }
+       
     }
 
     void StageGenelate(float posX)
     {
-        switch (m_switchNum) 
+        switch (m_switchNum)
         {
             case 1:
                 Destroy(m_oddObject);
@@ -100,19 +104,20 @@ public class StageSpawner : MonoBehaviour
 
         //m_cloneObject = Instantiate(m_stagePattern[RandomStageSelect()]
         //    , new Vector2(posX, 0f), Quaternion.identity);
-        
+
         //Debug.Log(m_cloneObject+"を生成");
     }
 
     int RandomStageSelect()
     {
-        switch (isHardMode) {
+        switch (isHardMode)
+        {
             case false:
                 randomNum = Random.Range(1, m_stagePattern.Length - m_difficultyNum);
                 Debug.Log("ステージ" + randomNum);
                 break;
             case true:
-                randomNum = Random.Range(m_stagePattern.Length - m_difficultyNum, m_stagePattern.Length );
+                randomNum = Random.Range(m_stagePattern.Length - m_difficultyNum, m_stagePattern.Length);
                 Debug.Log("ステージ" + randomNum);
                 break;
         }

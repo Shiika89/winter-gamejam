@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     /// <summary>無敵かどうか</summary>
     public bool Invincible { get => _invincible; set => _invincible = value; }
     /// <summary>プレイ中がどうか</summary>
-    public bool Game { get => m_game; }
+    public bool Game { get => m_game; set => m_game = value; }
+
+    public int Life { get => m_life; set => m_life = value; }
 
     SetResultScript m_setResultScript = default;
 
@@ -27,7 +29,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        m_game = true;
     }
 
     // Start is called before the first frame update
@@ -59,9 +60,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        m_life -= 1;
-
-        if (m_life == 0)
+        if (m_life == 0 && m_game)
         {
             m_setResultScript.SetUI(false);
             m_game = false;
@@ -72,5 +71,6 @@ public class GameManager : MonoBehaviour
     public void Clear()
     {
         m_setResultScript.SetUI(true);
+        m_game = false;
     }
 }
