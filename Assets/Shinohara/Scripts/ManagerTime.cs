@@ -39,8 +39,11 @@ public class ManagerTime : MonoBehaviour
 
     void Update()
     {
-        _timeText.text = _currentHour.ToString() + ":" + _currentMinute.ToString("d2");
-
+        if (GameManager.Instance.Game)
+        {
+            _timeText.text = _currentHour.ToString() + ":" + _currentMinute.ToString("d2");
+        }
+       
         if (GameManager.Instance.Game)
             _time += Time.deltaTime;
         
