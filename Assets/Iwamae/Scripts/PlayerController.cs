@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D m_playerRb;　//Rigidbody2Dの変数
 
+    Animator m_anim;
+
     float m_timer = 0;　//無敵時間を比較するための変数
 
     bool m_isGround = false; //接地判定のフラグ
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         m_playerRb = GetComponent<Rigidbody2D>();
+        m_anim = GetComponent<Animator>();
         m_skillGage.value = 0;
     }
 
@@ -73,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             m_isGround = true;
+            m_anim.SetBool("Jump", false);
         }
 
         if (collision.gameObject.tag == "Skill")
@@ -84,6 +88,10 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        m_isGround = false;
+        if (collision.gameObject.tag == "Ground")
+        {
+            m_isGround = false;
+            m_anim.SetBool("Jump", true);
+        }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8895892863782780712
+--- !u!1 &6748927530723388702
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8895892863782780714}
-  - component: {fileID: 8895892863782780713}
+  - component: {fileID: 6748927530723388688}
+  - component: {fileID: 6748927530723388689}
   m_Layer: 0
   m_Name: StageSpawnManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8895892863782780714
+--- !u!4 &6748927530723388688
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895892863782780712}
+  m_GameObject: {fileID: 6748927530723388702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8895892863782780713
+--- !u!114 &6748927530723388689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895892863782780712}
+  m_GameObject: {fileID: 6748927530723388702}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 116c19c89d4118349b963f3688767f0a, type: 3}
@@ -46,8 +46,19 @@ MonoBehaviour:
   m_nextNum: 0
   m_posX: 20
   m_stagePattern:
+  - {fileID: 243400695882498856, guid: cdcea14a29f8e014090d1e4ee7703e61, type: 3}
   - {fileID: 5056017670168288762, guid: f246cd7575b8acc4e8d022bc1b947e45, type: 3}
-  - {fileID: 5474372421092404435, guid: de9cc4d6ae889bc45928e71e512e4ad0, type: 3}
   - {fileID: 243400695882498856, guid: 82fb1a90e26ee5d438a6df64cb0b697a, type: 3}
-  - {fileID: 136855183261388295, guid: 5c77345fe7ce0754b85ed91f2418cb12, type: 3}
   - {fileID: 3623909938349232298, guid: 4c3e236781ad1b14487c19a047bff9cf, type: 3}
+  - {fileID: 5474372421092404435, guid: de9cc4d6ae889bc45928e71e512e4ad0, type: 3}
+  - {fileID: 5056017670168288762, guid: 28238c3aac6c03643a5bbc49a629f42b, type: 3}
+  - {fileID: 243400695882498856, guid: 0969e8756d890934f9cf16d270e9c201, type: 3}
+  - {fileID: 3623909938349232298, guid: 97aa42f8065bf164fae44d8d05efd2dc, type: 3}
+  - {fileID: 5474372421092404435, guid: 7c378e7cb2aa10f4d80eef96f913025a, type: 3}
+  m_speed: 10
+  m_plusSpeed: 0.5
+  m_timerCount: 0
+  m_interval: 10
+  isHardMode: 0
+  m_changeDifficultyTime: 22
+  m_difficultyNum: 4

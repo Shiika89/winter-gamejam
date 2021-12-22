@@ -28,6 +28,9 @@ public class Obstacle : MonoBehaviour
             if (collision.tag == "Player")
             {
                 GameManager.Instance.Hit();
+
+                Animator anim = collision.gameObject.GetComponentInParent<Animator>();
+                anim.SetTrigger("Damage");
             }
         }
     }
