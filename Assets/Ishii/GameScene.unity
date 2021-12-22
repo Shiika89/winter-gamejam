@@ -263,6 +263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1964878137, guid: 5900da1dd5fb5704aa64324e77f83f47, type: 3}
+      propertyPath: _setResultScript
+      value: 
+      objectReference: {fileID: 1812486576}
     - target: {fileID: 4585516748134471613, guid: 5900da1dd5fb5704aa64324e77f83f47,
         type: 3}
       propertyPath: m_Name
@@ -374,6 +378,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 812608377}
     m_Modifications:
+    - target: {fileID: 915751750868409020, guid: 3095d72ceb26fbc4ba1ae379c71f0b8d,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 915751750868409021, guid: 3095d72ceb26fbc4ba1ae379c71f0b8d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -678,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 6409996900444704969, guid: 54124a794f406c94da2abddbdf23e7fc,
         type: 3}
       propertyPath: _startTimeMinute
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409996900444704969, guid: 54124a794f406c94da2abddbdf23e7fc,
         type: 3}
@@ -931,6 +940,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1756947715}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1812486576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3649833429923703619, guid: 930a23b395d1cc549ae68d07946f3ff5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3649833430864319181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e8f3db3de2b774bbc596cdb2f63bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1888057751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1098,7 +1119,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1349,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_skillGage
       value: 
       objectReference: {fileID: 1662778711}
+    - target: {fileID: 1814602213, guid: 4610c4a64a5e88643aa813834fd23365, type: 3}
+      propertyPath: m_item
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5688030984931760578, guid: 4610c4a64a5e88643aa813834fd23365,
         type: 3}
       propertyPath: m_Name

@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     bool m_isGround = false; //接地判定のフラグ
 
+    bool m_muteki;
+
     void Start()
     {
         m_playerRb = GetComponent<Rigidbody2D>();
@@ -53,14 +55,20 @@ public class PlayerController : MonoBehaviour
 
         if (m_skillGage.value == m_item)
         {
+            m_muteki = true;
             m_skillGage.value = 0;
+        }
+
+        if (m_muteki)
+        {
             GameManager.Instance.Invincible = true;
             m_timer += Time.deltaTime;
 
-            if (m_timer == m_MutekiEnd)
+            if (m_timer > m_MutekiEnd)
             {
-                m_timer = 0;
                 GameManager.Instance.Invincible = false;
+                m_timer = 0;
+                m_muteki = false;
             }
         }
     }
