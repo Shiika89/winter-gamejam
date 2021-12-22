@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     /// <summary>無敵かどうか</summary>
     bool _invincible = false;
     /// <summary>無敵かどうか</summary>
-    public bool Invincible { get => _invincible; }
+    public bool Invincible { get => _invincible; set => _invincible = value; }
     /// <summary>プレイ中がどうか</summary>
     public bool Game { get => m_game; }
 

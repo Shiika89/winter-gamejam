@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,15 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // ここに当たったら行う処理を書く
-
-        if (collision.tag == "Player")
+        if (GameManager.Instance.Invincible)
         {
-            GameManager.Instance.Hit();
+            return;
+        }
+            // ここに当たったら行う処理を書く
+
+            if (collision.tag == "Player")
+            {
+                GameManager.Instance.Hit();
+            }
         }
     }
-}
