@@ -43,12 +43,12 @@ public class ManagerTime : MonoBehaviour
     {
         _timeText.text = _currentHour.ToString() + ":" + _currentMinute.ToString("d2");
 
-        if (GameManager.Instance.m_game)
+        if (GameManager.Instance.Game)
         {
             _time += Time.deltaTime;
         }
 
-        if (!GameManager.Instance.m_game && !_endFlag)
+        if (!GameManager.Instance.Game && !_endFlag)
         {
             AddTime();
         }

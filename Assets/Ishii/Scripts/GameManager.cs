@@ -11,10 +11,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject m_enemy = default;
     [SerializeField] int m_life = 3;
+    /// <summary>プレイ中がどうか</summary>
+    bool m_game = false;
+    /// <summary>無敵かどうか</summary>
+    bool _invincible = false;
+    /// <summary>無敵かどうか</summary>
+    public bool Invincible { get => _invincible; }
+    /// <summary>プレイ中がどうか</summary>
+    public bool Game { get => m_game; }
 
-    public bool m_game = false;
-   
     SetResultScript m_setResultScript = default;
+
+    
+
     private void Awake()
     {
         Instance = this;
@@ -27,6 +36,7 @@ public class GameManager : MonoBehaviour
         m_setResultScript = GetComponent<SetResultScript>();
     }
 
+    /// <summary>敵のアニメーションを再生</summary>
     public void Hit()
     {
         // Enemyの敵が当たったら呼ぶ
@@ -58,13 +68,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>クリア背景を出す </summary>
     public void Clear()
     {
         m_setResultScript.SetUI(true);
-    }
-
-    public void GameOver()
-    {
-
     }
 }
