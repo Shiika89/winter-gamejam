@@ -21,10 +21,18 @@ public class StageSpawner : MonoBehaviour
     private GameObject m_oddObject;
     private GameObject m_evenObject;
 
-    private bool isSwitch = false;
+    private int m_switchNum = 0;
 
     [SerializeField] float m_timerCount;
     [SerializeField] float m_interval;
+
+    [SerializeField] bool isHardMode = false;
+
+    private int randomNum;
+
+    [SerializeField] int m_changeDifficultyTime;
+
+    [SerializeField] int m_difficultyNum;
 
     //private float m_timeCount;
     void Start()
@@ -60,24 +68,32 @@ public class StageSpawner : MonoBehaviour
         {
             StageGenelate(m_posX);
         }
-        
+        if (ManagerTime.CurrentHour >= m_changeDifficultyTime)
+        {
+            isHardMode = true;
+        }
     }
 
     void StageGenelate(float posX)
     {
-        switch (isSwitch) 
+        switch (m_switchNum) 
         {
-            case false:
+            case 1:
                 Destroy(m_oddObject);
                 m_oddObject = Instantiate(m_stagePattern[RandomStageSelect()]
                 , new Vector2(posX, 0f), Quaternion.identity);
-                isSwitch = true;
+                m_switchNum = 2;
                 break;
-            case true:
+            case 2:
                 Destroy(m_evenObject);
                 m_evenObject = Instantiate(m_stagePattern[RandomStageSelect()]
                 , new Vector2(posX, 0f), Quaternion.identity);
-                isSwitch = false;
+                m_switchNum = 1;
+                break;
+            case 0:
+                m_oddObject = Instantiate(m_stagePattern[0]
+                    , new Vector2(posX, 0f), Quaternion.identity);
+                m_switchNum = 2;
                 break;
         }
 
@@ -90,9 +106,18 @@ public class StageSpawner : MonoBehaviour
 
     int RandomStageSelect()
     {
-        int randomNum = Random.Range(0, m_stagePattern.Length-1);
-        Debug.Log("ステージ"+randomNum);
+        switch (isHardMode) {
+            case false:
+                randomNum = Random.Range(1, m_stagePattern.Length - m_difficultyNum);
+                Debug.Log("ステージ" + randomNum);
+                break;
+            case true:
+                randomNum = Random.Range(m_stagePattern.Length - m_difficultyNum, m_stagePattern.Length );
+                Debug.Log("ステージ" + randomNum);
+                break;
+        }
         return randomNum;
+
     }
 
 }

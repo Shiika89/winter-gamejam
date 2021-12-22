@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2427154252536626670}
   - component: {fileID: 6372430289024300686}
-  - component: {fileID: 260177766909571740}
   - component: {fileID: -4861434440746288104}
+  - component: {fileID: 3030495437583019413}
   m_Layer: 9
   m_Name: bush
   m_TagString: Untagged
@@ -83,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &260177766909571740
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2225747892900054809}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.2
 --- !u!114 &-4861434440746288104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +95,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1971fc8248a70484ea4b9ae986193290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &3030495437583019413
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225747892900054809}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.31}
+  m_Size: {x: 2.69, y: 3.73}
+  m_Direction: 0
