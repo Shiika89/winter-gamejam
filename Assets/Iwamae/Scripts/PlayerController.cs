@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Header("スキルゲージ")] Slider m_skillGage;
 
+    [SerializeField] AudioManager m_audioManager;
+
     Rigidbody2D m_playerRb;　//Rigidbody2Dの変数
 
     Animator m_anim;
@@ -48,15 +50,17 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && m_isGround)
+        if (Input.GetButtonDown("Jump") && m_isGround && GameManager.Instance.Game)
         {
             m_playerRb.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
+            m_audioManager.RingSE(3);
         }
 
-        if (m_skillGage.value == m_item)
+        if (m_skillGage.value >= m_item)
         {
             m_muteki = true;
             m_skillGage.value = 0;
+            m_anim.SetTrigger("Muteki");
         }
 
         if (m_muteki)
