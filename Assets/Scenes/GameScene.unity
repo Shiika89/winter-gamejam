@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 667848517}
   - component: {fileID: 667848518}
   m_Layer: 0
-  m_Name: TimeManger
+  m_Name: TimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856a3deb903a1a24cb1ebacc113a1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTimeHour: 0
+  _startTimeHour: 21
   _startTimeMinute: 0
   _endTimeHour: 0
   _endTimeMinute: 0
@@ -509,11 +509,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 47f45ef7b5767674393cc401fc325705, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -629,7 +629,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153, y: 152}
+  m_AnchoredPosition: {x: -153, y: 183.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1323773498
@@ -642,6 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323773499}
   - component: {fileID: 1323773500}
+  - component: {fileID: 1323773501}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -678,6 +679,20 @@ MonoBehaviour:
   _fadeUI: {fileID: 0}
   _explanationUI: {fileID: 0}
   _bgm: {fileID: 0}
+--- !u!114 &1323773501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323773498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbd27f1e98c99b46b9f2db2ea330e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeOutUI: {fileID: 5184751185149840326, guid: 0090b3c030d801e48a552a8a8ad9596c,
+    type: 3}
 --- !u!1 &1372888843
 GameObject:
   m_ObjectHideFlags: 0

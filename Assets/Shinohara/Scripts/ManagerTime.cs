@@ -34,8 +34,6 @@ public class ManagerTime : MonoBehaviour
     {
         _currentHour = _startTimeHour;
         _currentMinute = _startTimeMinute;
-        Debug.Log(_currentHour);
-        
     }
 
 
@@ -44,14 +42,10 @@ public class ManagerTime : MonoBehaviour
         _timeText.text = _currentHour.ToString() + ":" + _currentMinute.ToString("d2");
 
         if (GameManager.Instance.Game)
-        {
             _time += Time.deltaTime;
-        }
-
-        if (!GameManager.Instance.Game && !_endFlag)
-        {
+        
+        if (GameManager.Instance.Game && !_endFlag)
             AddTime();
-        }
     }
 
     /// <summary>
