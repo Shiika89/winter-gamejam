@@ -114,11 +114,11 @@ public class StageSpawner : MonoBehaviour
         {
             case false:
                 randomNum = Random.Range(1, m_stagePattern.Length - m_difficultyNum);
-                Debug.Log("ステージ" + randomNum);
+              //  Debug.Log("ステージ" + randomNum);
                 break;
             case true:
                 randomNum = Random.Range(m_stagePattern.Length - m_difficultyNum, m_stagePattern.Length);
-                Debug.Log("ステージ" + randomNum);
+//Debug.Log("ステージ" + randomNum);
                 break;
         }
         return randomNum;

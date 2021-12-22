@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OssanAnim : MonoBehaviour
 {
+    [SerializeField] SetResultScript _setResultScript;
+
     /// <summary>
     /// アニメーション再生中は無敵にする
     /// </summary>
@@ -23,5 +25,12 @@ public class OssanAnim : MonoBehaviour
         {
             GameManager.Instance.Life--;
         }
+
+        if (GameManager.Instance.Life == 0)
+        {
+            _setResultScript.SetUI(false);
+        }
     }
+
+
 }

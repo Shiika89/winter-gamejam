@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        if (m_life == 0 && m_game)
-        {
-            m_setResultScript.SetUI(false);
-            m_game = false;
-        }
+        //if (m_life == 0 && m_game)
+        //{
+        //    m_setResultScript.SetUI(false);
+        //    m_game = false;
+        //}
     }
 
     /// <summary>クリア背景を出す </summary>
