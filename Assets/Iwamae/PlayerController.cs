@@ -36,10 +36,10 @@ public class PlayerController : MonoBehaviour
             m_playerRb.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
         }
 
-        if (m_skillGage.value == 3)
-        {
-            m_skillGage.value = 0;
-        }
+        //if (m_skillGage.value == 3)
+        //{
+        //    m_skillGage.value = 0;
+        //}
     }
 
     /// <summary>
@@ -48,12 +48,18 @@ public class PlayerController : MonoBehaviour
     /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
-        m_isGround = true;
+        if (collision.tag == "Ground")
+        {
+            m_isGround = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        m_isGround = false;
+        if (collision.tag == "Ground")
+        {
+            m_isGround = false;
+        }
     }
 
     /// <summary>

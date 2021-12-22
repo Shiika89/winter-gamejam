@@ -19,6 +19,10 @@ public class Obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // ここに当たったら行う処理を書く
-        GameManager.Instance.Hit();
+
+        if (collision.tag == "Player")
+        {
+            GameManager.Instance.Hit();
+        }
     }
 }

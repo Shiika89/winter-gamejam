@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1600406881713878140}
   - component: {fileID: 1990850826727933183}
   - component: {fileID: 6856828287401185778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Snowman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +108,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.92, y: 2.995}
+  m_Offset: {x: 0, y: -0.27}
+  m_Size: {x: 1.27, y: 2.43}
   m_Direction: 0
