@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startTimeHour: 23
-  _startTimeMinute: 15
+  _startTimeMinute: 0
   _endTimeHour: 0
   _endTimeMinute: 0
   _timeText: {fileID: 398405811}

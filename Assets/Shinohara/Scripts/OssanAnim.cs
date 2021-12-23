@@ -29,6 +29,7 @@ public class OssanAnim : MonoBehaviour
         if (GameManager.Instance.Life == 0)
         {
             _setResultScript.SetUI(false);
+            ManagerTime._endFlag = true;
         }
     }
 

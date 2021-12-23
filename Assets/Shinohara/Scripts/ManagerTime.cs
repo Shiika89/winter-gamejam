@@ -24,7 +24,7 @@ public class ManagerTime : MonoBehaviour
     /// <summary>現在時刻　分</summary>
     static int _currentMinute = 0;
     /// <summary>カウントを止める</summary>
-    bool _endFlag = false;
+    public static bool _endFlag = false;
     /// <summary>現在時刻　時</summary>
     public static int CurrentHour { get => _currentHour; set => _currentHour = value; }
     /// <summary>現在時刻　分</summary>
@@ -76,6 +76,7 @@ public class ManagerTime : MonoBehaviour
 
         if (_currentHour + _currentMinute == _endTimeHour + _endTimeMinute) //クリア判定
         {
+            Debug.Log("hit");
             GameManager.Instance.Clear();
             _endFlag = true;
         }
