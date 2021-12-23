@@ -30,8 +30,8 @@ public class StageSpawner : MonoBehaviour
 
     private int randomNum;
 
-    [SerializeField] int m_changeDifficultyTime;
-
+    [SerializeField] int m_changeDifficultyHour;
+    [SerializeField] int m_changeDifficultyMinute;
     [SerializeField] int m_difficultyNum;
 
     //private float m_timeCount;
@@ -70,7 +70,7 @@ public class StageSpawner : MonoBehaviour
             {
                 StageGenelate(m_posX);
             }
-            if (ManagerTime.CurrentHour >= m_changeDifficultyTime)
+            if (ManagerTime.CurrentHour >= m_changeDifficultyHour && ManagerTime.CurrentMinute >= m_changeDifficultyMinute)
             {
                 isHardMode = true;
             }
