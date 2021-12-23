@@ -7,5 +7,6 @@ public class GameStart : MonoBehaviour
     public void GameStartFunc()
     {
         GameManager.Instance.Game = true;
+        ManagerTime._endFlag = false;
     }
 }
