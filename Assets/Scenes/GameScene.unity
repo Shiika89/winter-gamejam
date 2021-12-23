@@ -215,7 +215,8 @@ MonoBehaviour:
   m_timerCount: 0
   m_interval: 10
   isHardMode: 0
-  m_changeDifficultyTime: 22
+  m_changeDifficultyHour: 23
+  m_changeDifficultyMinute: 30
   m_difficultyNum: 4
 --- !u!4 &161939369
 Transform:
