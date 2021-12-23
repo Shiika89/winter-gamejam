@@ -15,6 +15,14 @@ public class ChangeSceneManager : MonoBehaviour
     /// <summary>ゲームプレイ中のBGM</summary>
     [SerializeField] AudioSource _bgm;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     /// <summary>フェード用UIを生成する</summary>
     public void SetFadeUI()
     {
